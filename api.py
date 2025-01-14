@@ -9,8 +9,9 @@ def get_weather_data(city, api_key):
     else:
         raise Exception(f"API Error: {response.status_code}, {response.text}")
 
-# Exemple d'utilisation
 if __name__ == "__main__":
     with open("api_key.txt", "r") as file:
         api_key = file.read().strip()
-    print(get_weather_data("Paris", api_key))
+    city = input("Entrez le nom de la ville : ")
+    print(get_weather_data(city, api_key))
+
